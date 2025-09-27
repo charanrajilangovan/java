@@ -1,0 +1,111 @@
+import java.util.Scanner;
+
+public class RecursionPractice {
+
+    // =============================
+    // Task 1: Factorial using recursion
+    // =============================
+    static int factorial(int n) {
+        if (n == 0 || n == 1) return 1;
+        return n * factorial(n - 1);
+    }
+
+    // =============================
+    // Task 2: Fibonacci using recursion
+    // =============================
+    static int fibonacci(int n) {
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    // =============================
+    // Task 3: Sum of digits using recursion
+    // =============================
+    static int sumDigits(int n) {
+        if (n == 0) return 0;
+        return (n % 10) + sumDigits(n / 10);
+    }
+
+    // =============================
+    // Task 4: Reverse a string using recursion
+    // =============================
+    static String reverseString(String str) {
+        if (str.isEmpty()) return str;
+        return reverseString(str.substring(1)) + str.charAt(0);
+    }
+
+    // =============================
+    // Task 5: Check if number is palindrome using recursion
+    // =============================
+    static boolean isPalindrome(int n, int rev) {
+        if (n == 0) return rev == 0;
+        return isPalindrome(n / 10, rev * 10 + n % 10);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // =============================
+        // Task 1
+        // =============================
+        System.out.println("===== TASK 1: FACTORIAL =====");
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+        System.out.println("Factorial: " + factorial(num));
+
+        // =============================
+        // Task 2
+        // =============================
+        System.out.println("\n===== TASK 2: FIBONACCI SERIES =====");
+        System.out.print("Enter number of terms: ");
+        int n = sc.nextInt();
+        System.out.print("Fibonacci series: ");
+        for (int i = 0; i < n; i++) {
+            System.out.print(fibonacci(i) + " ");
+        }
+        System.out.println();
+
+        // =============================
+        // Task 3
+        // =============================
+        System.out.println("\n===== TASK 3: SUM OF DIGITS =====");
+        System.out.print("Enter a number: ");
+        int number = sc.nextInt();
+        System.out.println("Sum of digits: " + sumDigits(number));
+
+        sc.nextLine(); // consume newline
+
+        // =============================
+        // Task 4
+        // =============================
+        System.out.println("\n===== TASK 4: REVERSE STRING =====");
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+        System.out.println("Reversed string: " + reverseString(str));
+
+        // =============================
+        // Task 5
+        // =============================
+        System.out.println("\n===== TASK 5: PALINDROME NUMBER =====");
+        System.out.print("Enter a number: ");
+        int palNum = sc.nextInt();
+        int rev = 0;
+        int temp = palNum;
+        boolean isPal = true;
+        int original = temp;
+        int reversed = 0;
+        temp = original;
+        while(temp > 0){
+            reversed = reversed * 10 + temp % 10;
+            temp /= 10;
+        }
+        if(original == reversed){
+            System.out.println(original + " is a palindrome number.");
+        } else{
+            System.out.println(original + " is not a palindrome number.");
+        }
+
+        sc.close();
+    }
+}
