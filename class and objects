@@ -1,0 +1,146 @@
+import java.util.Scanner;
+
+// ============================
+// 5 Practice Programs Using Classes and Objects
+// ============================
+
+class Rectangle {
+    int length, width;
+
+    Rectangle(int l, int w) { // Constructor
+        length = l;
+        width = w;
+    }
+
+    int area() {
+        return length * width;
+    }
+
+    int perimeter() {
+        return 2 * (length + width);
+    }
+}
+
+class Circle {
+    double radius;
+
+    Circle(double r) {
+        radius = r;
+    }
+
+    double area() {
+        return Math.PI * radius * radius;
+    }
+
+    double circumference() {
+        return 2 * Math.PI * radius;
+    }
+}
+
+class Student {
+    String name;
+    int roll;
+
+    void display() {
+        System.out.println("Name: " + name + ", Roll: " + roll);
+    }
+}
+
+class BankAccount {
+    private double balance;
+
+    BankAccount(double initial) { // Constructor
+        balance = initial;
+    }
+
+    void deposit(double amt) {
+        balance += amt;
+    }
+
+    void withdraw(double amt) {
+        if (amt <= balance) {
+            balance -= amt;
+        } else {
+            System.out.println("Insufficient balance");
+        }
+    }
+
+    void showBalance() {
+        System.out.println("Balance: " + balance);
+    }
+}
+
+class Car {
+    String model;
+    int speed;
+
+    Car(String m, int s) {
+        model = m;
+        speed = s;
+    }
+
+    void accelerate(int inc) {
+        speed += inc;
+    }
+
+    void display() {
+        System.out.println("Model: " + model + ", Speed: " + speed);
+    }
+}
+
+public class ClassObjectPractice {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // ============================
+        // Task 1: Rectangle Object
+        // ============================
+        System.out.println("===== TASK 1: RECTANGLE =====");
+        Rectangle r = new Rectangle(5, 10);
+        System.out.println("Area: " + r.area());
+        System.out.println("Perimeter: " + r.perimeter());
+
+        // ============================
+        // Task 2: Circle Object
+        // ============================
+        System.out.println("\n===== TASK 2: CIRCLE =====");
+        Circle c = new Circle(7);
+        System.out.println("Area: " + c.area());
+        System.out.println("Circumference: " + c.circumference());
+
+        // ============================
+        // Task 3: Student Object
+        // ============================
+        System.out.println("\n===== TASK 3: STUDENT =====");
+        Student s = new Student();
+        System.out.print("Enter name: ");
+        s.name = sc.nextLine();
+        System.out.print("Enter roll number: ");
+        s.roll = sc.nextInt();
+        s.display();
+        sc.nextLine(); // consume newline
+
+        // ============================
+        // Task 4: BankAccount Object
+        // ============================
+        System.out.println("\n===== TASK 4: BANK ACCOUNT =====");
+        BankAccount acc = new BankAccount(5000);
+        acc.showBalance();
+        acc.deposit(2000);
+        acc.showBalance();
+        acc.withdraw(1000);
+        acc.showBalance();
+        acc.withdraw(7000); // Test insufficient balance
+
+        // ============================
+        // Task 5: Car Object
+        // ============================
+        System.out.println("\n===== TASK 5: CAR =====");
+        Car car = new Car("Tesla", 60);
+        car.display();
+        car.accelerate(40);
+        car.display();
+
+        sc.close();
+    }
+}
