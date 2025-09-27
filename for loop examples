@@ -1,0 +1,30 @@
+public class ForExample {
+    public static void main(String[] args) {
+        for(int i = 1; i <= 5; i++) {
+            System.out.println("Number: " + i);
+        }
+    }
+ }
+
+//..........................................................................................
+
+public class ForEachExample {
+    public static void main(String[] args) {
+        int numbers[] = {10, 20, 30, 40};
+        for(int num : numbers) {
+            System.out.println(num);
+        }
+    }
+ }
+
+//..........................................................................................
+
+public class ForEachExample {
+    public static void main(String[] args) {
+        String fruits[] = {"Apple", "Banana", "Mango", "Orange"};
+        for(String f : fruits) {
+            System.out.println(f);
+        }
+    }
+ }
+ 
