@@ -1,0 +1,23 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+// ============================
+// Java Basics Practice Program
+// ============================
+public class JavaBasicsPractice {
+
+    // ===== Task 1: Variables & Operators =====
+    static void variablesOperators() {
+        System.out.println("===== TASK 1: VARIABLES & OPERATORS =====");
+        int a = 10, b = 5;
+        System.out.println("a = " + a + ", b = " + b);
+        System.out.println("a + b = " + (a + b));
+        System.out.println("a - b = " + (a - b));
+        System.out.println("a * b = " + (a * b));
+        System.out.println("a / b = " + (a / b));
+        System.out.println("a % b = " + (a % b));
+    }
+
+    // ===== Task 2: Loops & Conditions =====
+    static void loopsConditions() {
+        System.out.prin
