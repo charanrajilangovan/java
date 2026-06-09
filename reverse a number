@@ -1,0 +1,11 @@
+public class charan {
+    public static void main(String[] args) {
+
+        int arr[] = {17, 27, 44, 20, 10};
+
+        for(int i=4;arr.length>=0;i--){
+        System.out.println(arr[i]);
+    }
+}
+}
+        
