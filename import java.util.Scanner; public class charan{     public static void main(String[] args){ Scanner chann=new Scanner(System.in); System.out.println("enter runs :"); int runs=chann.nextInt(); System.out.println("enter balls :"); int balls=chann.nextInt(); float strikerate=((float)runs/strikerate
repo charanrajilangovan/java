@@ -1,0 +1,13 @@
+import java.util.Scanner;
+public class charan{
+    public static void main(String[] args){
+Scanner chann=new Scanner(System.in);
+System.out.println("enter runs :");
+int runs=chann.nextInt();
+System.out.println("enter balls :");
+int balls=chann.nextInt();
+float strikerate=((float)runs/balls)*100;
+System.out.println("strikerate :" +strikerate);
+    }
+
+}
